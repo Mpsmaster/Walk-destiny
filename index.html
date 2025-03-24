@@ -134,9 +134,9 @@
             tonalidade = (tonalidade + 5) % 360;
             contexto.strokeStyle = `hsl(${tonalidade}, 100%, 50%)`;
 
-            // Escolher direção (90 graus à esquerda ou direita)
-            const direcao = Math.random() < 0.5 ? -1 : 1; // -1 para esquerda, 1 para direita
-            angulo += direcao * Math.PI / 2;
+            // Escolher uma das quatro direções cardinais aleatoriamente
+            const directions = [0, 3 * Math.PI / 2, Math.PI, Math.PI / 2]; // right, up, left, down
+            angulo = directions[Math.floor(Math.random() * directions.length)];
 
             // Calcular nova posição
             const distancia = tela.width / 20;  // Escalar distância baseado no canvas
